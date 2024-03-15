@@ -167,9 +167,13 @@ class Currency:
     choices = CurrencyChoices.choices
 
     @classmethod
-    def get_all_currencies(cls):
+    def currency_code_list(cls):
         return [choice[0] for choice in cls.choices]
 
     @classmethod
     def get_label(cls, code):
         return dict(cls.choices).get(code)
+
+    @classmethod
+    def currency_dict(cls):
+        return dict(cls.choices)
