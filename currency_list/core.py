@@ -177,3 +177,7 @@ class Currency:
     @classmethod
     def currency_dict(cls):
         return dict(cls.choices)
+
+    @classmethod
+    def reverse_currency_dict(cls):
+        return {v: k for k, v in cls.choices}
