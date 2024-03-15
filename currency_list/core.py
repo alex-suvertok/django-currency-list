@@ -164,8 +164,12 @@ class Currency:
         ZMW = 'ZMW', 'Zambian Kwacha'
         ZWD = 'ZWD', 'Zimbabwean Dollar'
 
-    @staticmethod
-    def get_all_currencies():
-        return [
-            choice.value for choice in Currency.CurrencyChoices.choices
-        ]
+    choices = CurrencyChoices.choices
+
+    @classmethod
+    def get_all_currencies(cls):
+        return [choice[0] for choice in cls.choices]
+
+    @classmethod
+    def get_label(cls, code):
+        return dict(cls.choices).get(code)
