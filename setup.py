@@ -2,8 +2,8 @@ from setuptools import setup, find_packages
 
 
 setup(
-    name='django-currency-list',
-    version='0.1',
+    name='django_currency_list',
+    version='0.1.2',
     packages=find_packages(),
     license='MIT',
     author='Alex Suvertok',
