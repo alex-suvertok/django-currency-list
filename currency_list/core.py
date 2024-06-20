@@ -78,7 +78,7 @@ class Currency:
         KHR = 'KHR', 'Cambodian Riel'
         KID = 'KID', 'Kiribati Dollar'
         KMF = 'KMF', 'Comorian Franc'
-        KRW = 'KRW', 'South Korean Won'
+        KPW = 'KPW', 'South Korean Won'
         KWD = 'KWD', 'Kuwaiti Dinar'
         KYD = 'KYD', 'Cayman Islands Dollar'
         KZT = 'KZT', 'Kazakhstani Tenge'
@@ -156,13 +156,11 @@ class Currency:
         WST = 'WST', 'Samoan Tala'
         XAF = 'XAF', 'Central African Franc'
         XCD = 'XCD', 'East Caribbean Dollar'
-        XDR = 'XDR', 'Special Drawing Rights'
         XOF = 'XOF', 'West African Franc'
         XPF = 'XPF', 'CFP Franc'
         YER = 'YER', 'Yemeni Rial'
         ZAR = 'ZAR', 'South African Rand'
         ZMW = 'ZMW', 'Zambian Kwacha'
-        ZWD = 'ZWD', 'Zimbabwean Dollar'
 
     choices = CurrencyChoices.choices
 
