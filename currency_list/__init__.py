@@ -11,5 +11,5 @@ reversed_currency_dict = Currency.reverse_currency_dict
 
 
 __all__ = [
-    'CurrencyField', 'CurrencyChoices', 'currency_code_list', 'get_label', 'currency_dict', 'reversed_currency_dict'
+    'Currency', 'CurrencyField', 'CurrencyChoices', 'currency_code_list', 'get_label', 'currency_dict', 'reversed_currency_dict'
 ]
