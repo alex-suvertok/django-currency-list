@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='django-currency-list',
-    version='0.1.8',
+    version='0.1.9',
     packages=find_packages(),
     license='MIT',
     author='Alex Suvertok',

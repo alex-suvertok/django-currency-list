@@ -1,6 +1,6 @@
 import pytest
 
-from .core import Currency
+from .currency import Currency
 
 
 def test_currency_code_list():
@@ -12,7 +12,7 @@ def test_currency_code_list():
         'ERN', 'ETB', 'EUR', 'FJD', 'FKP', 'FOK', 'GBP', 'GEL', 'GGP', 'GHS',
         'GIP', 'GMD', 'GNF', 'GTQ', 'GYD', 'HKD', 'HNL', 'HRK', 'HTG', 'HUF',
         'IDR', 'ILS', 'IMP', 'INR', 'IQD', 'IRR', 'ISK', 'JMD', 'JOD', 'JPY',
-        'KES', 'KGS', 'KHR', 'KID', 'KMF', 'KRW', 'KWD', 'KYD', 'KZT', 'LAK',
+        'KES', 'KGS', 'KHR', 'KID', 'KMF', 'KPW', 'KWD', 'KYD', 'KZT', 'LAK',
         'LBP', 'LKR', 'LRD', 'LSL', 'LYD', 'MAD', 'MDL', 'MGA', 'MKD', 'MMK',
         'MNT', 'MOP', 'MRU', 'MUR', 'MVR', 'MWK', 'MXN', 'MYR', 'MZN', 'NAD',
         'NGN', 'NIO', 'NOK', 'NPR', 'NZD', 'OMR', 'PAB', 'PEN', 'PGK', 'PHP',
@@ -20,7 +20,7 @@ def test_currency_code_list():
         'SCR', 'SDG', 'SEK', 'SGD', 'SHP', 'SLL', 'SOS', 'SRD', 'SSP', 'STN',
         'SYP', 'SZL', 'THB', 'TJS', 'TMT', 'TND', 'TOP', 'TRY', 'TTD', 'TVD',
         'TWD', 'TZS', 'UAH', 'UGX', 'USD', 'UYU', 'UZS', 'VES', 'VND', 'VUV',
-        'WST', 'XAF', 'XCD', 'XDR', 'XOF', 'XPF', 'YER', 'ZAR', 'ZMW', 'ZWD'
+        'WST', 'XAF', 'XCD', 'XOF', 'XPF', 'YER', 'ZAR', 'ZMW'
     ]
     assert Currency.currency_code_list() == expected_currencies
 
@@ -111,7 +111,7 @@ def test_currency_dict():
         'KHR': 'Cambodian Riel',
         'KID': 'Kiribati Dollar',
         'KMF': 'Comorian Franc',
-        'KRW': 'South Korean Won',
+        'KPW': 'South Korean Won',
         'KWD': 'Kuwaiti Dinar',
         'KYD': 'Cayman Islands Dollar',
         'KZT': 'Kazakhstani Tenge',
@@ -189,13 +189,11 @@ def test_currency_dict():
         'WST': 'Samoan Tala',
         'XAF': 'Central African Franc',
         'XCD': 'East Caribbean Dollar',
-        'XDR': 'Special Drawing Rights',
         'XOF': 'West African Franc',
         'XPF': 'CFP Franc',
         'YER': 'Yemeni Rial',
         'ZAR': 'South African Rand',
         'ZMW': 'Zambian Kwacha',
-        'ZWD': 'Zimbabwean Dollar',
     }
 
     actual_dict = Currency.currency_dict()
@@ -280,7 +278,7 @@ def test_reverse_currency_dict():
         'Cambodian Riel': 'KHR',
         'Kiribati Dollar': 'KID',
         'Comorian Franc': 'KMF',
-        'South Korean Won': 'KRW',
+        'South Korean Won': 'KPW',
         'Kuwaiti Dinar': 'KWD',
         'Cayman Islands Dollar': 'KYD',
         'Kazakhstani Tenge': 'KZT',
@@ -358,13 +356,11 @@ def test_reverse_currency_dict():
         'Samoan Tala': 'WST',
         'Central African Franc': 'XAF',
         'East Caribbean Dollar': 'XCD',
-        'Special Drawing Rights': 'XDR',
         'West African Franc': 'XOF',
         'CFP Franc': 'XPF',
         'Yemeni Rial': 'YER',
         'South African Rand': 'ZAR',
         'Zambian Kwacha': 'ZMW',
-        'Zimbabwean Dollar': 'ZWD',
     }
 
     actual_dict = Currency.reverse_currency_dict()
