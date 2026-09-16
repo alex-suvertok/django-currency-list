@@ -1,5 +1,5 @@
 from django.db import models
-from currency_list.currency import Currency
+from .currency import Currency
 
 
 

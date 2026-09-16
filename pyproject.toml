@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "django-currency-list"
+version = "0.2.0"
+description = "This library simplifies the handling of the currency field in Django projects."
+readme = { file = "README.md", content-type = "text/markdown" }
+requires-python = ">=3.10"
+license = "MIT"
+authors = [
+    { name = "Alex Suvertok", email = "alex.suvertok@gmail.com" },
+]
+dependencies = [
+    "Django>=5.2",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Web Environment",
+    "Framework :: Django",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+]
+
+[project.urls]
+Homepage = "https://github.com/alex-suvertok/django-currency-list"
+Repository = "https://github.com/alex-suvertok/django-currency-list"
+
+[tool.setuptools.packages.find]
+include = ["currency_list*"]
+exclude = ["currency_list.test*"]

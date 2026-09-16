@@ -12,7 +12,7 @@ def test_currency_code_list():
         'ERN', 'ETB', 'EUR', 'FJD', 'FKP', 'FOK', 'GBP', 'GEL', 'GGP', 'GHS',
         'GIP', 'GMD', 'GNF', 'GTQ', 'GYD', 'HKD', 'HNL', 'HRK', 'HTG', 'HUF',
         'IDR', 'ILS', 'IMP', 'INR', 'IQD', 'IRR', 'ISK', 'JMD', 'JOD', 'JPY',
-        'KES', 'KGS', 'KHR', 'KID', 'KMF', 'KPW', 'KWD', 'KYD', 'KZT', 'LAK',
+        'KES', 'KGS', 'KHR', 'KID', 'KMF', 'KPW', 'KRW', 'KWD', 'KYD', 'KZT', 'LAK',
         'LBP', 'LKR', 'LRD', 'LSL', 'LYD', 'MAD', 'MDL', 'MGA', 'MKD', 'MMK',
         'MNT', 'MOP', 'MRU', 'MUR', 'MVR', 'MWK', 'MXN', 'MYR', 'MZN', 'NAD',
         'NGN', 'NIO', 'NOK', 'NPR', 'NZD', 'OMR', 'PAB', 'PEN', 'PGK', 'PHP',
@@ -29,9 +29,15 @@ def test_currency_code_list():
     ('USD', 'United States Dollar'),
     ('EUR', 'Euro'),
     ('GBP', 'British Pound Sterling'),
+    ('KPW', 'North Korean Won'),
+    ('KRW', 'South Korean Won'),
 ])
 def test_get_label(code, expected_label):
     assert Currency.get_label(code) == expected_label
+
+
+def test_get_label_unknown_code_returns_none():
+    assert Currency.get_label('XYZ') is None
 
 
 def test_currency_dict():
@@ -50,7 +56,7 @@ def test_currency_dict():
         'BBD': 'Barbadian Dollar',
         'BDT': 'Bangladeshi Taka',
         'BGN': 'Bulgarian Lev',
-        'BHD': 'Bahraini dinar',
+        'BHD': 'Bahraini Dinar',
         'BIF': 'Burundian Franc',
         'BMD': 'Bermudian Dollar',
         'BND': 'Brunei Dollar',
@@ -107,11 +113,12 @@ def test_currency_dict():
         'JOD': 'Jordanian Dinar',
         'JPY': 'Japanese Yen',
         'KES': 'Kenyan Shilling',
-        'KGS': 'Kyrgystani Som',
+        'KGS': 'Kyrgyzstani Som',
         'KHR': 'Cambodian Riel',
         'KID': 'Kiribati Dollar',
         'KMF': 'Comorian Franc',
-        'KPW': 'South Korean Won',
+        'KPW': 'North Korean Won',
+        'KRW': 'South Korean Won',
         'KWD': 'Kuwaiti Dinar',
         'KYD': 'Cayman Islands Dollar',
         'KZT': 'Kazakhstani Tenge',
@@ -217,7 +224,7 @@ def test_reverse_currency_dict():
         'Barbadian Dollar': 'BBD',
         'Bangladeshi Taka': 'BDT',
         'Bulgarian Lev': 'BGN',
-        'Bahraini dinar': 'BHD',
+        'Bahraini Dinar': 'BHD',
         'Burundian Franc': 'BIF',
         'Bermudian Dollar': 'BMD',
         'Brunei Dollar': 'BND',
@@ -274,11 +281,12 @@ def test_reverse_currency_dict():
         'Jordanian Dinar': 'JOD',
         'Japanese Yen': 'JPY',
         'Kenyan Shilling': 'KES',
-        'Kyrgystani Som': 'KGS',
+        'Kyrgyzstani Som': 'KGS',
         'Cambodian Riel': 'KHR',
         'Kiribati Dollar': 'KID',
         'Comorian Franc': 'KMF',
-        'South Korean Won': 'KPW',
+        'North Korean Won': 'KPW',
+        'South Korean Won': 'KRW',
         'Kuwaiti Dinar': 'KWD',
         'Cayman Islands Dollar': 'KYD',
         'Kazakhstani Tenge': 'KZT',

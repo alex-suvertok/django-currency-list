@@ -17,7 +17,7 @@ class Currency:
         BBD = 'BBD', 'Barbadian Dollar'
         BDT = 'BDT', 'Bangladeshi Taka'
         BGN = 'BGN', 'Bulgarian Lev'
-        BHD = 'BHD', 'Bahraini dinar'
+        BHD = 'BHD', 'Bahraini Dinar'
         BIF = 'BIF', 'Burundian Franc'
         BMD = 'BMD', 'Bermudian Dollar'
         BND = 'BND', 'Brunei Dollar'
@@ -74,11 +74,12 @@ class Currency:
         JOD = 'JOD', 'Jordanian Dinar'
         JPY = 'JPY', 'Japanese Yen'
         KES = 'KES', 'Kenyan Shilling'
-        KGS = 'KGS', 'Kyrgystani Som'
+        KGS = 'KGS', 'Kyrgyzstani Som'
         KHR = 'KHR', 'Cambodian Riel'
         KID = 'KID', 'Kiribati Dollar'
         KMF = 'KMF', 'Comorian Franc'
-        KPW = 'KPW', 'South Korean Won'
+        KPW = 'KPW', 'North Korean Won'
+        KRW = 'KRW', 'South Korean Won'
         KWD = 'KWD', 'Kuwaiti Dinar'
         KYD = 'KYD', 'Cayman Islands Dollar'
         KZT = 'KZT', 'Kazakhstani Tenge'
@@ -163,19 +164,21 @@ class Currency:
         ZMW = 'ZMW', 'Zambian Kwacha'
 
     choices = CurrencyChoices.choices
+    _labels_by_code = dict(CurrencyChoices.choices)
+    _codes_by_label = {label: code for code, label in _labels_by_code.items()}
 
     @classmethod
     def currency_code_list(cls):
-        return [choice[0] for choice in cls.choices]
+        return list(cls._labels_by_code)
 
     @classmethod
     def get_label(cls, code):
-        return dict(cls.choices).get(code)
+        return cls._labels_by_code.get(code)
 
     @classmethod
     def currency_dict(cls):
-        return dict(cls.choices)
+        return dict(cls._labels_by_code)
 
     @classmethod
     def reverse_currency_dict(cls):
-        return {v: k for k, v in cls.choices}
+        return dict(cls._codes_by_label)
