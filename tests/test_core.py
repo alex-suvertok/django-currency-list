@@ -1,6 +1,6 @@
 import pytest
 
-from .currency import Currency
+from currency_list import Currency
 
 
 def test_currency_code_list():

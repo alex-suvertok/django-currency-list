@@ -20,7 +20,6 @@ classifiers = [
     "Environment :: Web Environment",
     "Framework :: Django",
     "Intended Audience :: Developers",
-    "License :: OSI Approved :: MIT License",
     "Natural Language :: English",
     "Operating System :: OS Independent",
     "Programming Language :: Python :: 3",
@@ -37,4 +36,3 @@ Repository = "https://github.com/alex-suvertok/django-currency-list"
 
 [tool.setuptools.packages.find]
 include = ["currency_list*"]
-exclude = ["currency_list.test*"]
